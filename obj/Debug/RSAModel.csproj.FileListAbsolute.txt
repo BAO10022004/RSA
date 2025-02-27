@@ -1,0 +1,16 @@
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\RSAModel.exe.config
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\RSAModel.exe
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\RSAModel.pdb
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\Guna.UI2.dll
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.csproj.AssemblyReference.cache
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.Properties.Resources.resources
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.csproj.GenerateResource.cache
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.csproj.CoreCompileInputs.cache
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.csproj.Up2Date
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.exe
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.pdb
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.EncryptForm.resources
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\RSAModel.exe.manifest
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\RSAModel.application
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.exe.manifest
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.application
