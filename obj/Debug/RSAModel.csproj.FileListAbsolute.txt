@@ -14,3 +14,4 @@ C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\RSAModel.exe.ma
 C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\bin\Debug\RSAModel.application
 C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.exe.manifest
 C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.application
+C:\Users\giaba\source\repos\3\Ky2\Network Security\RSA\obj\Debug\RSAModel.DencryptForm.resources

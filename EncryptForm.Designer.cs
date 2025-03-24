@@ -54,28 +54,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2Panel8 = new Guna.UI2.WinForms.Guna2Panel();
-            this.lbDataan = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.lbKR = new System.Windows.Forms.Label();
-            this.lbKU = new System.Windows.Forms.Label();
-            this.lbDatad = new System.Windows.Forms.Label();
-            this.lbDatae = new System.Windows.Forms.Label();
-            this.lbDataN = new System.Windows.Forms.Label();
-            this.lbDataq = new System.Windows.Forms.Label();
-            this.lbDatep = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.guna2Panel11 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnResetDencrypt = new Guna.UI2.WinForms.Guna2Button();
+            this.btnExcuteDencrypt = new Guna.UI2.WinForms.Guna2Button();
+            this.btnChosseOutputFiles = new Guna.UI2.WinForms.Guna2Button();
+            this.txtOutputFileDencrypt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnChosseInputFile = new Guna.UI2.WinForms.Guna2Button();
+            this.txtInputFileDencrypt = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2Panel17 = new Guna.UI2.WinForms.Guna2Panel();
             this.label4 = new System.Windows.Forms.Label();
+            this.guna2Panel18 = new Guna.UI2.WinForms.Guna2Panel();
+            this.guna2Panel19 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnChosseKey = new Guna.UI2.WinForms.Guna2Button();
+            this.txtKeyPath = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btnUse = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2Panel20 = new Guna.UI2.WinForms.Guna2Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.guna2Panel6 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2ProgressBar1 = new Guna.UI2.WinForms.Guna2ProgressBar();
             this.fileInputPath = new System.Windows.Forms.OpenFileDialog();
             this.folderInputDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.folderOutputDialog = new System.Windows.Forms.FolderBrowserDialog();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.ofdKey = new System.Windows.Forms.OpenFileDialog();
             this.guna2Panel1.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             this.guna2Panel9.SuspendLayout();
@@ -88,6 +91,13 @@
             this.guna2Panel3.SuspendLayout();
             this.guna2Panel4.SuspendLayout();
             this.guna2Panel8.SuspendLayout();
+            this.guna2Panel11.SuspendLayout();
+            this.guna2Panel15.SuspendLayout();
+            this.guna2Panel16.SuspendLayout();
+            this.guna2Panel17.SuspendLayout();
+            this.guna2Panel18.SuspendLayout();
+            this.guna2Panel19.SuspendLayout();
+            this.guna2Panel20.SuspendLayout();
             this.guna2Panel6.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -172,6 +182,7 @@
             this.guna2Panel13.Name = "guna2Panel13";
             this.guna2Panel13.Size = new System.Drawing.Size(527, 283);
             this.guna2Panel13.TabIndex = 2;
+            this.guna2Panel13.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel13_Paint);
             // 
             // cbType
             // 
@@ -347,9 +358,6 @@
             this.label14.Text = "ENCRYPT";
             this.label14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // guna2ProgressBar1
-            // 
-         
             // guna2Panel7
             // 
             this.guna2Panel7.BorderColor = System.Drawing.Color.Blue;
@@ -449,7 +457,6 @@
             // guna2Panel4
             // 
             this.guna2Panel4.Controls.Add(this.guna2Panel8);
-            this.guna2Panel4.Controls.Add(this.label4);
             this.guna2Panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.guna2Panel4.Location = new System.Drawing.Point(547, 0);
             this.guna2Panel4.Name = "guna2Panel4";
@@ -458,197 +465,308 @@
             // 
             // guna2Panel8
             // 
-            this.guna2Panel8.Controls.Add(this.lbDataan);
-            this.guna2Panel8.Controls.Add(this.label15);
-            this.guna2Panel8.Controls.Add(this.lbKR);
-            this.guna2Panel8.Controls.Add(this.lbKU);
-            this.guna2Panel8.Controls.Add(this.lbDatad);
-            this.guna2Panel8.Controls.Add(this.lbDatae);
-            this.guna2Panel8.Controls.Add(this.lbDataN);
-            this.guna2Panel8.Controls.Add(this.lbDataq);
-            this.guna2Panel8.Controls.Add(this.lbDatep);
-            this.guna2Panel8.Controls.Add(this.label12);
-            this.guna2Panel8.Controls.Add(this.label11);
-            this.guna2Panel8.Controls.Add(this.label10);
-            this.guna2Panel8.Controls.Add(this.label9);
-            this.guna2Panel8.Controls.Add(this.label8);
-            this.guna2Panel8.Controls.Add(this.label7);
-            this.guna2Panel8.Controls.Add(this.label6);
+            this.guna2Panel8.Controls.Add(this.guna2Panel11);
             this.guna2Panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2Panel8.Location = new System.Drawing.Point(0, 45);
+            this.guna2Panel8.Location = new System.Drawing.Point(0, 0);
             this.guna2Panel8.Name = "guna2Panel8";
-            this.guna2Panel8.Size = new System.Drawing.Size(517, 492);
+            this.guna2Panel8.Size = new System.Drawing.Size(517, 537);
             this.guna2Panel8.TabIndex = 4;
             this.guna2Panel8.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel8_Paint);
             // 
-            // lbDataan
+            // guna2Panel11
             // 
-            this.lbDataan.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDataan.Location = new System.Drawing.Point(298, 120);
-            this.lbDataan.Name = "lbDataan";
-            this.lbDataan.Size = new System.Drawing.Size(173, 36);
-            this.lbDataan.TabIndex = 16;
-            this.lbDataan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbDataan.Click += new System.EventHandler(this.lbDatep_Click);
+            this.guna2Panel11.Controls.Add(this.guna2Panel15);
+            this.guna2Panel11.Controls.Add(this.guna2Panel18);
+            this.guna2Panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel11.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel11.Name = "guna2Panel11";
+            this.guna2Panel11.Size = new System.Drawing.Size(517, 537);
+            this.guna2Panel11.TabIndex = 2;
             // 
-            // label15
+            // guna2Panel15
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label15.Location = new System.Drawing.Point(256, 120);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(36, 30);
-            this.label15.TabIndex = 15;
-            this.label15.Text = "n :";
+            this.guna2Panel15.BorderColor = System.Drawing.Color.Blue;
+            this.guna2Panel15.BorderRadius = 20;
+            this.guna2Panel15.BorderThickness = 4;
+            this.guna2Panel15.Controls.Add(this.guna2Panel16);
+            this.guna2Panel15.Controls.Add(this.guna2Panel17);
+            this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel15.Location = new System.Drawing.Point(0, 199);
+            this.guna2Panel15.Name = "guna2Panel15";
+            this.guna2Panel15.Padding = new System.Windows.Forms.Padding(10);
+            this.guna2Panel15.Size = new System.Drawing.Size(517, 338);
+            this.guna2Panel15.TabIndex = 3;
             // 
-            // lbKR
+            // guna2Panel16
             // 
-            this.lbKR.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbKR.Location = new System.Drawing.Point(164, 226);
-            this.lbKR.Name = "lbKR";
-            this.lbKR.Size = new System.Drawing.Size(341, 36);
-            this.lbKR.TabIndex = 14;
-            this.lbKR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.guna2Panel16.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dot;
+            this.guna2Panel16.Controls.Add(this.btnResetDencrypt);
+            this.guna2Panel16.Controls.Add(this.btnExcuteDencrypt);
+            this.guna2Panel16.Controls.Add(this.btnChosseOutputFiles);
+            this.guna2Panel16.Controls.Add(this.txtOutputFileDencrypt);
+            this.guna2Panel16.Controls.Add(this.btnChosseInputFile);
+            this.guna2Panel16.Controls.Add(this.txtInputFileDencrypt);
+            this.guna2Panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel16.Location = new System.Drawing.Point(10, 45);
+            this.guna2Panel16.Name = "guna2Panel16";
+            this.guna2Panel16.Size = new System.Drawing.Size(497, 283);
+            this.guna2Panel16.TabIndex = 2;
             // 
-            // lbKU
+            // btnResetDencrypt
             // 
-            this.lbKU.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbKU.Location = new System.Drawing.Point(164, 163);
-            this.lbKU.Name = "lbKU";
-            this.lbKU.Size = new System.Drawing.Size(341, 36);
-            this.lbKU.TabIndex = 13;
-            this.lbKU.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnResetDencrypt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnResetDencrypt.BorderRadius = 10;
+            this.btnResetDencrypt.BorderThickness = 2;
+            this.btnResetDencrypt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnResetDencrypt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnResetDencrypt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnResetDencrypt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnResetDencrypt.FillColor = System.Drawing.Color.White;
+            this.btnResetDencrypt.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnResetDencrypt.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnResetDencrypt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnResetDencrypt.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnResetDencrypt.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnResetDencrypt.Location = new System.Drawing.Point(32, 215);
+            this.btnResetDencrypt.Name = "btnResetDencrypt";
+            this.btnResetDencrypt.Size = new System.Drawing.Size(207, 52);
+            this.btnResetDencrypt.TabIndex = 23;
+            this.btnResetDencrypt.Text = "Reset";
             // 
-            // lbDatad
+            // btnExcuteDencrypt
             // 
-            this.lbDatad.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDatad.Location = new System.Drawing.Point(287, 70);
-            this.lbDatad.Name = "lbDatad";
-            this.lbDatad.Size = new System.Drawing.Size(173, 36);
-            this.lbDatad.TabIndex = 12;
-            this.lbDatad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbDatad.Click += new System.EventHandler(this.lbDatep_Click);
+            this.btnExcuteDencrypt.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExcuteDencrypt.BorderRadius = 10;
+            this.btnExcuteDencrypt.BorderThickness = 2;
+            this.btnExcuteDencrypt.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcuteDencrypt.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnExcuteDencrypt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnExcuteDencrypt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnExcuteDencrypt.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnExcuteDencrypt.ForeColor = System.Drawing.Color.White;
+            this.btnExcuteDencrypt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExcuteDencrypt.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnExcuteDencrypt.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnExcuteDencrypt.Location = new System.Drawing.Point(266, 215);
+            this.btnExcuteDencrypt.Name = "btnExcuteDencrypt";
+            this.btnExcuteDencrypt.Size = new System.Drawing.Size(207, 52);
+            this.btnExcuteDencrypt.TabIndex = 22;
+            this.btnExcuteDencrypt.Text = "Excute";
+            this.btnExcuteDencrypt.Click += new System.EventHandler(this.btnExcuteDencrypt_Click);
             // 
-            // lbDatae
+            // btnChosseOutputFiles
             // 
-            this.lbDatae.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDatae.Location = new System.Drawing.Point(298, 12);
-            this.lbDatae.Name = "lbDatae";
-            this.lbDatae.Size = new System.Drawing.Size(173, 36);
-            this.lbDatae.TabIndex = 11;
-            this.lbDatae.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbDatae.Click += new System.EventHandler(this.lbDatep_Click);
+            this.btnChosseOutputFiles.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseOutputFiles.BorderRadius = 10;
+            this.btnChosseOutputFiles.BorderThickness = 2;
+            this.btnChosseOutputFiles.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChosseOutputFiles.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChosseOutputFiles.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChosseOutputFiles.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChosseOutputFiles.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChosseOutputFiles.ForeColor = System.Drawing.Color.White;
+            this.btnChosseOutputFiles.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseOutputFiles.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnChosseOutputFiles.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseOutputFiles.Location = new System.Drawing.Point(381, 142);
+            this.btnChosseOutputFiles.Name = "btnChosseOutputFiles";
+            this.btnChosseOutputFiles.Size = new System.Drawing.Size(113, 52);
+            this.btnChosseOutputFiles.TabIndex = 21;
+            this.btnChosseOutputFiles.Text = "Browse";
+            this.btnChosseOutputFiles.Click += new System.EventHandler(this.btnChosseOutputFiles_Click);
             // 
-            // lbDataN
+            // txtOutputFileDencrypt
             // 
-            this.lbDataN.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDataN.Location = new System.Drawing.Point(77, 117);
-            this.lbDataN.Name = "lbDataN";
-            this.lbDataN.Size = new System.Drawing.Size(173, 36);
-            this.lbDataN.TabIndex = 10;
-            this.lbDataN.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbDataN.Click += new System.EventHandler(this.lbDatep_Click);
+            this.txtOutputFileDencrypt.BorderRadius = 10;
+            this.txtOutputFileDencrypt.BorderThickness = 2;
+            this.txtOutputFileDencrypt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtOutputFileDencrypt.DefaultText = "Output Path";
+            this.txtOutputFileDencrypt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtOutputFileDencrypt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtOutputFileDencrypt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOutputFileDencrypt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtOutputFileDencrypt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOutputFileDencrypt.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtOutputFileDencrypt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtOutputFileDencrypt.Location = new System.Drawing.Point(7, 142);
+            this.txtOutputFileDencrypt.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtOutputFileDencrypt.Name = "txtOutputFileDencrypt";
+            this.txtOutputFileDencrypt.PlaceholderText = "";
+            this.txtOutputFileDencrypt.SelectedText = "";
+            this.txtOutputFileDencrypt.Size = new System.Drawing.Size(372, 50);
+            this.txtOutputFileDencrypt.TabIndex = 20;
             // 
-            // lbDataq
+            // btnChosseInputFile
             // 
-            this.lbDataq.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDataq.Location = new System.Drawing.Point(76, 63);
-            this.lbDataq.Name = "lbDataq";
-            this.lbDataq.Size = new System.Drawing.Size(173, 36);
-            this.lbDataq.TabIndex = 9;
-            this.lbDataq.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbDataq.Click += new System.EventHandler(this.lbDatep_Click);
+            this.btnChosseInputFile.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseInputFile.BorderRadius = 10;
+            this.btnChosseInputFile.BorderThickness = 2;
+            this.btnChosseInputFile.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChosseInputFile.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChosseInputFile.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChosseInputFile.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChosseInputFile.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChosseInputFile.ForeColor = System.Drawing.Color.White;
+            this.btnChosseInputFile.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseInputFile.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnChosseInputFile.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseInputFile.Location = new System.Drawing.Point(382, 76);
+            this.btnChosseInputFile.Name = "btnChosseInputFile";
+            this.btnChosseInputFile.Size = new System.Drawing.Size(113, 52);
+            this.btnChosseInputFile.TabIndex = 19;
+            this.btnChosseInputFile.Text = "Browse";
+            this.btnChosseInputFile.Click += new System.EventHandler(this.btnChosseInputFile_Click);
             // 
-            // lbDatep
+            // txtInputFileDencrypt
             // 
-            this.lbDatep.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.lbDatep.Location = new System.Drawing.Point(76, 15);
-            this.lbDatep.Name = "lbDatep";
-            this.lbDatep.Size = new System.Drawing.Size(173, 36);
-            this.lbDatep.TabIndex = 8;
-            this.lbDatep.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lbDatep.Click += new System.EventHandler(this.lbDatep_Click);
+            this.txtInputFileDencrypt.BorderRadius = 10;
+            this.txtInputFileDencrypt.BorderThickness = 2;
+            this.txtInputFileDencrypt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtInputFileDencrypt.DefaultText = "Input Path";
+            this.txtInputFileDencrypt.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtInputFileDencrypt.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtInputFileDencrypt.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInputFileDencrypt.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtInputFileDencrypt.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtInputFileDencrypt.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtInputFileDencrypt.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtInputFileDencrypt.Location = new System.Drawing.Point(7, 76);
+            this.txtInputFileDencrypt.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtInputFileDencrypt.Name = "txtInputFileDencrypt";
+            this.txtInputFileDencrypt.PlaceholderText = "";
+            this.txtInputFileDencrypt.SelectedText = "";
+            this.txtInputFileDencrypt.Size = new System.Drawing.Size(372, 50);
+            this.txtInputFileDencrypt.TabIndex = 18;
             // 
-            // label12
+            // guna2Panel17
             // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.Location = new System.Drawing.Point(22, 169);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(123, 30);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Key public :";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.Location = new System.Drawing.Point(19, 232);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(132, 30);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Key private :";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.Location = new System.Drawing.Point(255, 76);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(37, 30);
-            this.label10.TabIndex = 5;
-            this.label10.Text = "d :";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(257, 15);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(35, 30);
-            this.label9.TabIndex = 4;
-            this.label9.Text = "e :";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label8.Location = new System.Drawing.Point(23, 119);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 30);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "N :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label7.Location = new System.Drawing.Point(23, 66);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 30);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "q :";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(22, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(37, 30);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "p :";
+            this.guna2Panel17.Controls.Add(this.label4);
+            this.guna2Panel17.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel17.Location = new System.Drawing.Point(10, 10);
+            this.guna2Panel17.Name = "guna2Panel17";
+            this.guna2Panel17.Size = new System.Drawing.Size(497, 35);
+            this.guna2Panel17.TabIndex = 1;
             // 
             // label4
             // 
-            this.label4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold);
             this.label4.Location = new System.Drawing.Point(0, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(517, 45);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "INFO KEY";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label4.Size = new System.Drawing.Size(497, 35);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "DENCRYPT";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // guna2Panel18
+            // 
+            this.guna2Panel18.BorderColor = System.Drawing.Color.Blue;
+            this.guna2Panel18.BorderRadius = 20;
+            this.guna2Panel18.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            this.guna2Panel18.BorderThickness = 4;
+            this.guna2Panel18.Controls.Add(this.guna2Panel19);
+            this.guna2Panel18.Controls.Add(this.guna2Panel20);
+            this.guna2Panel18.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel18.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel18.Margin = new System.Windows.Forms.Padding(10);
+            this.guna2Panel18.Name = "guna2Panel18";
+            this.guna2Panel18.Padding = new System.Windows.Forms.Padding(10);
+            this.guna2Panel18.Size = new System.Drawing.Size(517, 199);
+            this.guna2Panel18.TabIndex = 0;
+            // 
+            // guna2Panel19
+            // 
+            this.guna2Panel19.Controls.Add(this.btnChosseKey);
+            this.guna2Panel19.Controls.Add(this.txtKeyPath);
+            this.guna2Panel19.Controls.Add(this.btnUse);
+            this.guna2Panel19.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2Panel19.Location = new System.Drawing.Point(10, 45);
+            this.guna2Panel19.Name = "guna2Panel19";
+            this.guna2Panel19.Size = new System.Drawing.Size(497, 144);
+            this.guna2Panel19.TabIndex = 2;
+            // 
+            // btnChosseKey
+            // 
+            this.btnChosseKey.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseKey.BorderRadius = 10;
+            this.btnChosseKey.BorderThickness = 2;
+            this.btnChosseKey.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnChosseKey.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnChosseKey.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnChosseKey.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnChosseKey.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnChosseKey.ForeColor = System.Drawing.Color.White;
+            this.btnChosseKey.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseKey.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnChosseKey.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnChosseKey.Location = new System.Drawing.Point(381, 15);
+            this.btnChosseKey.Name = "btnChosseKey";
+            this.btnChosseKey.Size = new System.Drawing.Size(113, 52);
+            this.btnChosseKey.TabIndex = 25;
+            this.btnChosseKey.Text = "Browse";
+            this.btnChosseKey.Click += new System.EventHandler(this.btnChosseKey_Click);
+            // 
+            // txtKeyPath
+            // 
+            this.txtKeyPath.BorderRadius = 10;
+            this.txtKeyPath.BorderThickness = 2;
+            this.txtKeyPath.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtKeyPath.DefaultText = "Input Path";
+            this.txtKeyPath.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtKeyPath.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtKeyPath.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKeyPath.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtKeyPath.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKeyPath.Font = new System.Drawing.Font("Segoe UI", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtKeyPath.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtKeyPath.Location = new System.Drawing.Point(7, 17);
+            this.txtKeyPath.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.txtKeyPath.Name = "txtKeyPath";
+            this.txtKeyPath.PlaceholderText = "";
+            this.txtKeyPath.SelectedText = "";
+            this.txtKeyPath.Size = new System.Drawing.Size(372, 50);
+            this.txtKeyPath.TabIndex = 24;
+            // 
+            // btnUse
+            // 
+            this.btnUse.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnUse.BorderRadius = 10;
+            this.btnUse.BorderThickness = 2;
+            this.btnUse.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnUse.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnUse.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnUse.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnUse.Font = new System.Drawing.Font("Segoe UI Semibold", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnUse.ForeColor = System.Drawing.Color.White;
+            this.btnUse.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnUse.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnUse.HoverState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.btnUse.Location = new System.Drawing.Point(143, 76);
+            this.btnUse.Name = "btnUse";
+            this.btnUse.Size = new System.Drawing.Size(207, 52);
+            this.btnUse.TabIndex = 23;
+            this.btnUse.Text = "Use";
+            this.btnUse.Click += new System.EventHandler(this.btnUse_Click);
+            // 
+            // guna2Panel20
+            // 
+            this.guna2Panel20.Controls.Add(this.label6);
+            this.guna2Panel20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel20.Location = new System.Drawing.Point(10, 10);
+            this.guna2Panel20.Name = "guna2Panel20";
+            this.guna2Panel20.Size = new System.Drawing.Size(497, 35);
+            this.guna2Panel20.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Black", 20F, System.Drawing.FontStyle.Bold);
+            this.label6.Location = new System.Drawing.Point(0, 0);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(497, 35);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "USING KEY";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // guna2Panel6
             // 
@@ -659,11 +777,11 @@
             this.guna2Panel6.Size = new System.Drawing.Size(1064, 36);
             this.guna2Panel6.TabIndex = 2;
             // 
-            // guna2ProgressBar2
+            // guna2ProgressBar1
             // 
             this.guna2ProgressBar1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2ProgressBar1.Location = new System.Drawing.Point(0, 0);
-            this.guna2ProgressBar1.Name = "guna2ProgressBar2";
+            this.guna2ProgressBar1.Name = "guna2ProgressBar1";
             this.guna2ProgressBar1.Size = new System.Drawing.Size(1064, 36);
             this.guna2ProgressBar1.TabIndex = 2;
             this.guna2ProgressBar1.Text = "guna2ProgressBar2";
@@ -673,6 +791,17 @@
             // fileInputPath
             // 
             this.fileInputPath.FileName = "openFileDialog1";
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.WorkerReportsProgress = true;
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BgWorker_DoWork);
+            this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BgWorker_ProgressChanged);
+            this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BgWorker_RunWorkerCompleted);
+            // 
+            // ofdKey
+            // 
+            this.ofdKey.FileName = "openFileDialog1";
             // 
             // EncryptForm
             // 
@@ -699,7 +828,13 @@
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel8.ResumeLayout(false);
-            this.guna2Panel8.PerformLayout();
+            this.guna2Panel11.ResumeLayout(false);
+            this.guna2Panel15.ResumeLayout(false);
+            this.guna2Panel16.ResumeLayout(false);
+            this.guna2Panel17.ResumeLayout(false);
+            this.guna2Panel18.ResumeLayout(false);
+            this.guna2Panel19.ResumeLayout(false);
+            this.guna2Panel20.ResumeLayout(false);
             this.guna2Panel6.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -710,7 +845,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Label label4;
         private Guna.UI2.WinForms.Guna2ProgressBar guna2ProgressBar1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel5;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel7;
@@ -723,13 +857,6 @@
         private System.Windows.Forms.Label label3;
         private Guna.UI2.WinForms.Guna2ComboBox cbSizeKey;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel8;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel12;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel13;
         private Guna.UI2.WinForms.Guna2Button btnReset;
@@ -743,18 +870,29 @@
         private Guna.UI2.WinForms.Guna2Button btnCreate;
         private Guna.UI2.WinForms.Guna2ComboBox cbType;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label lbDatep;
-        private System.Windows.Forms.Label lbKR;
-        private System.Windows.Forms.Label lbKU;
-        private System.Windows.Forms.Label lbDatad;
-        private System.Windows.Forms.Label lbDatae;
-        private System.Windows.Forms.Label lbDataN;
-        private System.Windows.Forms.Label lbDataq;
-        private System.Windows.Forms.Label lbDataan;
-        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.OpenFileDialog fileInputPath;
         private System.Windows.Forms.FolderBrowserDialog folderInputDialog;
         private System.Windows.Forms.FolderBrowserDialog folderOutputDialog;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel11;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel16;
+        private Guna.UI2.WinForms.Guna2Button btnResetDencrypt;
+        private Guna.UI2.WinForms.Guna2Button btnExcuteDencrypt;
+        private Guna.UI2.WinForms.Guna2Button btnChosseOutputFiles;
+        private Guna.UI2.WinForms.Guna2TextBox txtOutputFileDencrypt;
+        private Guna.UI2.WinForms.Guna2Button btnChosseInputFile;
+        private Guna.UI2.WinForms.Guna2TextBox txtInputFileDencrypt;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel17;
+        private System.Windows.Forms.Label label4;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel18;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel19;
+        private Guna.UI2.WinForms.Guna2Button btnChosseKey;
+        private Guna.UI2.WinForms.Guna2TextBox txtKeyPath;
+        private Guna.UI2.WinForms.Guna2Button btnUse;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel20;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.OpenFileDialog ofdKey;
     }
 }
 

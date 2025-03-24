@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|c:\\users\\giaba\\source\\repos\\3\\ky2\\network security\\rsa\\encryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:encryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\rsahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:rsahelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\encryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:encryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|c:\\users\\giaba\\source\\repos\\3\\ky2\\network security\\rsa\\encryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:encryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\dencryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:dencryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\dencryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:dencryptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\dencryptform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|solutionrelative:dencryptform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C0808357-C65D-4687-A1F0-CE89B7529143}|RSAModel.csproj|C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\encryptform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,37 +58,73 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+              "Name": "ST:0:0:{269a02dc-6af8-11d3-bdc4-00c04f688e50}"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "RSAHelper.cs",
+              "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\RSAHelper.cs",
+              "RelativeDocumentMoniker": "RSAHelper.cs",
+              "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\RSAHelper.cs",
+              "RelativeToolTip": "RSAHelper.cs",
+              "ViewState": "AgIAACUAAAAAAAAAAAAgwC8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-07T04:22:22.84Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "EncryptForm.cs",
               "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\EncryptForm.cs",
               "RelativeDocumentMoniker": "EncryptForm.cs",
               "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\EncryptForm.cs",
               "RelativeToolTip": "EncryptForm.cs",
-              "ViewState": "AgIAAN8AAAAAAAAAAAAQwNAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABEBAAAAAAAAAAAuwCQBAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T11:34:07.717Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EncryptForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\EncryptForm.Designer.cs",
-              "RelativeDocumentMoniker": "EncryptForm.Designer.cs",
-              "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\EncryptForm.Designer.cs",
-              "RelativeToolTip": "EncryptForm.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEUAAAA7AAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "DencryptForm.cs",
+              "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\DencryptForm.cs",
+              "RelativeDocumentMoniker": "DencryptForm.cs",
+              "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\DencryptForm.cs",
+              "RelativeToolTip": "DencryptForm.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAAwEQAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-27T08:30:59.185Z",
+              "WhenOpened": "2025-03-01T18:55:36.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T19:06:22.185Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "DencryptForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\DencryptForm.cs",
+              "RelativeDocumentMoniker": "DencryptForm.cs",
+              "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\DencryptForm.cs [Design]",
+              "RelativeToolTip": "DencryptForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T18:46:38.479Z"
             },
             {
               "$type": "Document",
@@ -81,6 +137,31 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T11:27:26.333Z",
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EncryptForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\EncryptForm.Designer.cs",
+              "RelativeDocumentMoniker": "EncryptForm.Designer.cs",
+              "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\EncryptForm.Designer.cs",
+              "RelativeToolTip": "EncryptForm.Designer.cs",
+              "ViewState": "AgIAALgCAAAAAAAAAAAAAPoCAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T08:30:59.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DencryptForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\DencryptForm.Designer.cs",
+              "RelativeDocumentMoniker": "DencryptForm.Designer.cs",
+              "ToolTip": "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\RSA\\DencryptForm.Designer.cs",
+              "RelativeToolTip": "DencryptForm.Designer.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAAABYAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-01T18:47:29.302Z"
             }
           ]
         }

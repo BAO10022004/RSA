@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
 using System.Net.Http;
 using System.Numerics;
 using System.Security.Cryptography;
+using System.Security.Policy;
+using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows.Forms;
+using Label = System.Windows.Forms.Label;
 
 namespace RSAModel
 {
@@ -17,10 +22,11 @@ namespace RSAModel
         string N;
         string e;
         string d;
-        private byte [] fileInput;
+        private byte[] fileInput;
         private string folderInput;
         private string pathOutput;
         private string KeyPrivate;
+        RSAHelper rsa;
         Dictionary<string, string> lib;
         private static readonly HttpClient client = new HttpClient();
         public EncryptForm()
@@ -30,61 +36,27 @@ namespace RSAModel
             cbSizeKey.DataSource = new List<int>()
             {
                 512,
-                1024, 
+                1024,
                 2048
             };
+            
 
         }
-        
-        private async void btnCreate_Click(object sender, EventArgs e)
+
+        private void btnCreate_Click(object sender, EventArgs e)
         {
-            // Step 1
-            p =await GeneratePrimeNumber(cbSizeKey.Text);
-            q = await GeneratePrimeNumber(cbSizeKey.Text);
-            do
-            {
-                q = await GeneratePrimeNumber(cbSizeKey.Text);
-            }while(q.Equals(p));
-            N = BigInteger.Parse(p) * BigInteger.Parse(q) + "";
-            lbDatep.Text = p.Substring(0, Math.Min(10, p.Length)) + "..."; ;
-            lbDataq.Text = q.Substring(0, Math.Min(10, q.Length)) + "..."; ;
-            lbDataN.Text = N.Substring(0, Math.Min(10, N.Length)) + "..."; ;
-            lib[lbDatep.Name] = p;
-            lib[lbDataq.Name] =q;
-            lib[lbDataN.Name] =N;
-            // Step 2
-            BigInteger nInteger = (BigInteger.Parse(p) - 1) * (BigInteger.Parse(q) - 1);
-            n = nInteger.ToString();
-            lbDataan.Text = n.Substring(0, Math.Min(10, n.Length)) + "...";
-            lib[lbDataan.Name] = n;
-            // Step 3
-            this.e = await GenerateEAsync(cbSizeKey.Text); 
-            lbDatae.Text = this.e.Substring(0, Math.Min(10, this.e.Length)) + "...";
-            lib[lbDatae.Name] = this.e;
-            // Step 4
-            this.d = await GenerateDAsync(cbSizeKey.Text); 
-            lbDatad.Text = this.d.Substring(0, Math.Min(10, this.e.Length)) + "...";
-            lib[lbDatad.Name] = this.d;
-            // Step 5
-            lbKU.Text = $"({lbDatae.Text},{lbDataN.Text})";
-            lbKR.Text = $"({lbDatad.Text},{lbDataN.Text})";
+            rsa = new RSAHelper(cbSizeKey.Text);
+            rsa.SaveKeys();
+            rsa.LoadPrivateKey("C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\Test\\KEY\\publicKey.pem");
+            rsa.LoadPublicKey("C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\Test\\KEY\\publicKey.pem");
             cbType.DataSource = new List<string>()
             {
                 "Folder",
                 "File"
             };
-            // Save Key private and Send Key public 
            
-            string publicKeyPath = "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\Test\\KEY\\publicKey.pem";
-            string privateKeyPath = "C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\Test\\KEY\\privateKey.pem";
-
-            // Xuất Public Key
-            File.WriteAllText(publicKeyPath,N+this.e);
-
-            // Xuất Private Key
-            File.WriteAllText(privateKeyPath,N+d);
-
         }
+
         private async Task<string> GeneratePrimeNumber(string number)
         {
             string baseUrl = "https://localhost:7183/api/MyRSA/Generate";
@@ -178,10 +150,9 @@ namespace RSAModel
                 if (folderInputDialog.ShowDialog() == DialogResult.OK)
                 {
                     txtInputPath.Text = folderInputDialog.SelectedPath;
-                    pathOutput= folderInputDialog.SelectedPath;
+                    folderInput = folderInputDialog.SelectedPath;
                 }
             }
-            
         }
 
         private void btnBrowseOutputPath_Click(object sender, EventArgs e)
@@ -195,40 +166,71 @@ namespace RSAModel
 
         private void btnExcute_Click(object sender, EventArgs e)
         {
-            BigInteger nBig = BigInteger.Parse(n);
-            BigInteger eBig = BigInteger.Parse(this.e);
-            if (cbType.Text.Equals("File"))
-            {
-                
-                byte[] sourchBytes = fileInput;
-                BigInteger plaintext = new BigInteger(sourchBytes);
-                BigInteger ciphertext = ModPow(plaintext, eBig, nBig);
-                File.WriteAllBytes($"{pathOutput}\\output.bin", ciphertext.ToByteArray());
-            }
-            else
-            {
-                string sourceFolder = txtInputPath.Text;
-                string encryptedFolder = txtOutputPath.Text;
-                EncryptDirectory(sourceFolder, 
-                                encryptedFolder, 
-                                eBig, 
-                                nBig
-                                );
-            }
-            
+            rsa.LoadPublicKey("C:\\Users\\giaba\\source\\repos\\3\\Ky2\\Network Security\\Test\\KEY\\publicKey.pem");
+            rsa.EncryptFile
+            (
+                txtInputPath.Text,
+                Path.Combine
+                (
+                    txtOutputPath.Text,
+                    Path.GetFileNameWithoutExtension(new Uri(txtInputPath.Text).LocalPath) + ".dat"
+                 )
+
+             );
         }
+
+        private void BgWorker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            try
+            {
+                dynamic args = e.Argument;
+                BigInteger nBig = args.nBig;
+                BigInteger eBig = args.eBig;
+
+                if (args.type == "File")
+                {
+                    EncryptFile(txtInputPath.Text, args.encryptedFolder, eBig, nBig);
+                }
+                else
+                {
+                    string[] files = Directory.GetFiles(args.sourceFolder);
+                    int totalFiles = files.Length;
+                    int processedFiles = 0;
+
+                    foreach (var file in files)
+                    {
+                        EncryptFile(file, args.encryptedFolder, eBig, nBig);
+                        processedFiles++;
+
+                        // Báo cáo tiến trình
+                        int percent = (int)((processedFiles / (double)totalFiles) * 100);
+                        backgroundWorker1.ReportProgress(percent);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi: {ex.Message}", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void BgWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            guna2ProgressBar1.Value = e.ProgressPercentage;
+        }
+        private void BgWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            guna2ProgressBar1.Value = 100;
+            MessageBox.Show("Quá trình mã hóa đã hoàn tất!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            guna2ProgressBar1.Value = 0;
+        }
+
         static void EncryptDirectory(string sourceDir, string destDir, BigInteger e, BigInteger n)
         {
             if (!Directory.Exists(destDir))
                 Directory.CreateDirectory(destDir);
             foreach (string file in Directory.GetFiles(sourceDir))
             {
-                string fileName = Path.GetFileName(file);
-                string encryptedFilePath = Path.Combine(destDir, fileName + ".enc");
-                byte[] fileBytes = File.ReadAllBytes(file);
-                BigInteger plaintext = new BigInteger(fileBytes);
-                BigInteger ciphertext = ModPow(plaintext, e, n);
-                File.WriteAllBytes(encryptedFilePath, ciphertext.ToByteArray());
+                EncryptFile(file, destDir, e, n);
             }
             foreach (string subDir in Directory.GetDirectories(sourceDir))
             {
@@ -237,18 +239,82 @@ namespace RSAModel
                 EncryptDirectory(subDir, newDestDir, e, n);
             }
         }
+
+        public static void EncryptFile(string sourceFile, string destDir, BigInteger e, BigInteger n)
+        {
+            Directory.CreateDirectory(destDir);
+
+            string filename = Path.GetFileName(sourceFile);
+            string encryptedFile = Path.Combine(destDir, filename + ".enc");
+
+            byte[] fileBytes = File.ReadAllBytes(sourceFile);
+
+            using (StreamWriter writer = new StreamWriter(encryptedFile))
+            {
+                writer.WriteLine($"RSA ENCRYPTED FILE - Original: {filename}");
+
+                for (int i = 0; i < fileBytes.Length; i += 2)  // Mã hóa theo khối 2 byte
+                {
+                    BigInteger block = (i + 1 < fileBytes.Length)
+                        ? (fileBytes[i] << 8) | fileBytes[i + 1]
+                        : fileBytes[i];
+
+                    BigInteger encryptedBlock = BigInteger.ModPow(block, e, n);
+                    writer.WriteLine(encryptedBlock.ToString());
+                }
+            }
+        }
         static BigInteger ModPow(BigInteger baseValue, BigInteger exponent, BigInteger modulus)
         {
             BigInteger result = 1;
             while (exponent > 0)
             {
-                if ((exponent & 1) == 1)  
+                if ((exponent & 1) == 1)
                     result = (result * baseValue) % modulus;
 
                 baseValue = (baseValue * baseValue) % modulus;
-                exponent >>= 1; 
+                exponent >>= 1;
             }
             return result;
+        }
+
+        private void btnChosseKey_Click(object sender, EventArgs e)
+        {
+            if (ofdKey.ShowDialog() == DialogResult.OK)
+            {
+                txtKeyPath.Text = ofdKey.FileName;
+            }            
+        }
+
+        private void btnUse_Click(object sender, EventArgs e)
+        {
+            rsa.LoadPrivateKey(txtKeyPath.Text);
+        }
+
+        private void btnChosseInputFile_Click(object sender, EventArgs e)
+        {
+            if (fileInputPath.ShowDialog() == DialogResult.OK)
+            {
+                txtInputFileDencrypt.Text = fileInputPath.FileName;
+            }
+        }
+
+        private void btnChosseOutputFiles_Click(object sender, EventArgs e)
+        {
+            if (folderOutputDialog.ShowDialog() == DialogResult.OK)
+            {
+                txtOutputFileDencrypt .Text = folderOutputDialog.SelectedPath;
+            }
+        }
+
+        private void btnExcuteDencrypt_Click(object sender, EventArgs e)
+        {
+            rsa.DecryptFile(txtInputFileDencrypt.Text, Path.Combine(txtOutputFileDencrypt.Text, "a.txt"));
+        }
+
+        private void guna2Panel13_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
